@@ -1,0 +1,24 @@
+<?php
+use Doctrine\Common\Collections\Criteria;
+
+/**
+ * @Entity @Table(name="reservierungen")
+ **/
+class Reservierung
+{
+    /** @Id @Column(type="integer") @GeneratedValue **/
+    protected $id;
+	
+    /** @Column(type="string") **/
+    protected $email;
+    
+   // /** @Column(type="Date") **/
+   // protected $date;
+    
+    function __construct($email) {
+        $this->email = $email;
+    }
+}
+
+
+ 
