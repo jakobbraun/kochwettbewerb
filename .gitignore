@@ -1,3 +1,4 @@
 bootstrap.php
 .directory
 vendor/
+.DS_Store
