@@ -46,12 +46,34 @@ h2{
  input{
     margin:5px 7px 5px 0px!important;
  }
+ input[type=text]{
+    margin:5px 7px 5px 0px!important;
+    width: 90%;
+ }
  input[type=submit]{
     padding:2px 10px;
     color:#468a2b;
  }
+
+ input[type=text]{
+   padding: 2px;
+   transition: border 0.1s linear, background 0.5s linear;
+ }
+ input:valid{
+   border: 1px solid lightgray;
+ }
+
+input:invalid{
+  border: 1px solid #f55;
+}
+
+input.highlight{
+  background: #fbb;
+  transition: border 0.1s linear, background 0.1s linear;
+}
+
  #infos{
-    
+
  }
  #infos ul{
     margin-left:12px;
@@ -60,8 +82,8 @@ h2{
     text-align:left;
     margin-left:20px;
  }
- 
- 
+
+
  li{
     color:#888;
  }
@@ -70,6 +92,7 @@ h2{
  }
 
 </style>
+<script type="text/javascript" src="js/script.js"></script>
 <title>Kochwettbewerb</title>
 <body>
 <div id="container" class="container">
@@ -90,8 +113,8 @@ h2{
         <div id="join" class="box twobox col-md-6 col-lg-6">
             <h2>Kochen</h2>
             Du möchtest antreten? - Dann melde dich hier an:
-            <form action="submit.php" method="POST">
-            <input type="text" placeholder="z.B. max@mustermann.de" name="email"/><br>
+            <form onsubmit="return validate(this)" action="submit.php" method="POST">
+            <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" placeholder="z.B. max@mustermann.de" name="email" required/><br>
             <Input type="radio" name="partner" value="needed">Ich suche einen Teampartner</input><br>
             <Input type="radio" name="partner" value="notNeeded">Ich habe schon einen Teampartner</input><br>
             <input type="hidden" name="type" value="team" />
@@ -101,8 +124,8 @@ h2{
         <div id="come" class="box twobox col-md-6 col-lg-6"><h2>Reservieren</h2>
             Preis bei Reservierung: 5€, Abendkasse 6€<br>
             Bezahlung bei Einlass
-            <form action="submit.php" method="POST">
-                <input type="text" placeholder="z.B. max@mustermann.de" name="email"/><br>
+            <form onsubmit="return validate(this)" action="submit.php" method="POST">
+                <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" placeholder="z.B. max@mustermann.de" name="email" required/><br>
                 <input type="hidden" name="type" value="reservation" />
                 <input type="submit" value="Reservieren" />
             </form>

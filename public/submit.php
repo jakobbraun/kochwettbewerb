@@ -1,4 +1,9 @@
-
+<?php
+if (!isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+  header("Location: index.html");
+  exit;
+}
+?>
 <html>
 <meta charset="utf-8">
 <title>Kochwettbewerb</title>
