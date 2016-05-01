@@ -40,7 +40,7 @@ if(isset($_POST['type']) && $_POST['type'] == "team"){
     echo "<h1>Erfolgreich Angemeldet</h1>Wir werden uns bald bei dir per Mail melden, um alles Weitere zu besprechen.";
 }
 else if(isset($_POST['type']) && $_POST['type'] == "reservation"){
-    $reservation = new Reservierung($_POST['email']);
+    $reservation = new Reservierung($_POST['email'],$_POST['number']);
     $entityManager->persist($reservation);
     $entityManager->flush();
     echo "<h1>Erfolgreich Reserviert</h1>Wir freuen uns auf dich!";
