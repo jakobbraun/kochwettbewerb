@@ -1,5 +1,6 @@
 <?php
-if (!isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+
+if(!isset($_POST['email']) /*|| !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)*/){
   header("Location: index.html");
   exit;
 }
