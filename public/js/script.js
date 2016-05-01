@@ -5,6 +5,7 @@ function validate (elem) {
     var c = elem.children[i];
     if (c.validity && !c.validity.valid){
       c.classList.add("highlight");
+      c.classList.add("marked");
       window.setTimeout(function(c){
         c.classList.remove("highlight");
       }, 100, c);
