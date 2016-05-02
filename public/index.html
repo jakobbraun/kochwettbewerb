@@ -36,7 +36,7 @@
             Bezahlung bei Einlass
             <form onsubmit="return validate(this)" action="submit.php" method="POST">
                 <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" placeholder="z.B. max@mustermann.de" name="email" required/><br>
-                Anzahl Plätze: <input type="number" min="1" max="6" placeholder="1" name="number" required/><br>
+                Anzahl Plätze: <input type="number" min="1" max="6" value="1" placeholder="1" name="number" required/><br>
                 <input type="hidden" name="type" value="reservation" />
                 <input type="submit" value="Reservieren" />
             </form>
