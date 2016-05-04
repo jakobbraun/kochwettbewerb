@@ -29,7 +29,7 @@ body {
 
 *{
   font-family:SourceSansPro;
-  font-weight:100;
+  /*font-weight:100;*/
 }
 h2{
   text-align:center;
