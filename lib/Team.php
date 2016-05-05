@@ -8,21 +8,27 @@ class Team
 {
     /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
-	
+
     /** @Column(type="string") **/
     protected $email;
-    
+
     /** @Column(type="boolean") **/
     protected $hasTeamMember;
-    
+
    // /** @Column(type="Date") **/
    // protected $date;
-    
+
     function __construct($email,$hasTeamMember) {
         $this->email = $email;
         $this->hasTeamMember = $hasTeamMember;
     }
+
+    function getEmail(){
+        return $this->email;
+    }
+
+    static function getFreePartners($entityManager){
+        return $entityManager->getRepository('Team')->findAll(array("hasTeamMember"=>false));
+    }
 }
-
-
- 
+?>

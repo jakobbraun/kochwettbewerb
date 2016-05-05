@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'SourceSansPro';
+  font-style: light;
+  font-weight: 100;
+  src: local('SourceSansPro'), url(SourceSansPro-Light.ttf);
+}
+
+*{
+margin:0;
+padding:0;
+}
+
+body {
+  background:#fafafa;
+}
+
+#container{
+  margin: 70 auto;
+  max-width:800px;
+}
+
+#loeffel{
+  width:100%;
+}
+
+.box{
+  margin-top:10px;
+}
+
+*{
+  font-family:SourceSansPro;
+  /*font-weight:100;*/
+}
+h2{
+  text-align:center;
+  font-family:SourceSansPro;
+  font-weight:100;
+  margin-bottom:5px;
+  font-size:30px;
+  color:#6bbe4c;
+}
+
+input{
+  margin:5px 7px 5px 0px!important;
+}
+
+input[type=text]{
+  margin:5px 7px 5px 0px!important;
+  width: 90%;
+}
+
+input[type=submit]{
+  padding:2px 10px;
+  color:#468a2b;
+}
+
+input[type=text]{
+  border: 1px solid lightgray;
+  padding: 2px;
+  transition: border 0.15s linear, background 0.5s linear;
+}
+
+input.marked:invalid{
+  border: 1px solid #f55;
+}
+
+input.highlight{
+  background: #fbb;
+  transition: border 0.15s linear, background 0.1s linear;
+}
+
+#infos ul{
+  margin-left:12px;
+}
+
+#date{
+  text-align:left;
+  margin-left:20px;
+}
+
+li{
+  color:#888;
+}
+
+li span{
+  color:#222;
+}

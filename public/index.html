@@ -1,75 +1,9 @@
 <html>
 <meta charset="utf-8">
 <link href="bootstrap.min.css" rel="stylesheet">
-<style>
-@font-face {
-  font-family: 'SourceSansPro';
-  font-style: light;
-  font-weight: 100;
-  src: local('SourceSansPro'), url(SourceSansPro-Light.ttf);
-}
-
-*{
-margin:0;
-padding:0;
-}
-
-body {
-    background:#fafafa;
-}
-
-#container{
-  margin: 70 auto;
-  max-width:800px;
-}
-
-#loeffel{
-    width:100%;
-}
-
-.box{
-    margin-top:10px;
-}
-
-*{
-    font-family:SourceSansPro;
-    font-weight:100;
-}
-h2{
-    text-align:center;
-    font-family:SourceSansPro;
-    font-weight:100;
-    margin-bottom:5px;
-    font-size:30px;
-    color:#6bbe4c;
-}
- input{
-    margin:5px 7px 5px 0px!important;
- }
- input[type=submit]{
-    padding:2px 10px;
-    color:#468a2b;
- }
- #infos{
-    
- }
- #infos ul{
-    margin-left:12px;
- }
- #date{
-    text-align:left;
-    margin-left:20px;
- }
- 
- 
- li{
-    color:#888;
- }
- li span{
-    color:#222;
- }
-
-</style>
+<link href="css/root.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="js/script.js"></script>
 <title>Kochwettbewerb</title>
 <body>
 <div id="container" class="container">
@@ -79,19 +13,19 @@ h2{
     <ul>
         <li><span>Teams von 2-3 Personen treten gegeneinander an</span></li>
         <li><span>Jedes Team kocht für ca. 10 Personen</span></li>
-        <li><span>Gäst beurteilen das Essen und bestimmen Gewinnerteam</span></li>
+        <li><span>Die Gäste beurteilen das Essen und bestimmen das Gewinnerteam</span></li>
         <li><span>Die Teams kochen in ihren eigenen Küchen</span></li>
-        <li><span>Die Ausgaben für die Lebensmittel werden bis zu 3€/Person erstattet</span></li>
-        <li><span>Das Abendessen findet um <strong>19:00</strong> im genütlichen Aambiente mit Livemusik statt</span></li>
-        <li><span>Der Wettbewerb wird vom HPI-Kochklub versanstalltet</span></li>
+        <li><span>Ausgaben für Lebensmittel werden mit bis zu 3€/Person erstattet</span></li>
+        <li><span>Das Abendessen findet um <strong>19:00</strong> in gemütlichem Ambiente mit Livemusik statt</span></li>
+        <li><span>Der Wettbewerb wird vom HPI-Kochklub veranstaltet</span></li>
     </ul>
     </div>
     <div class="row">
         <div id="join" class="box twobox col-md-6 col-lg-6">
             <h2>Kochen</h2>
             Du möchtest antreten? - Dann melde dich hier an:
-            <form action="submit.php" method="POST">
-            <input type="text" placeholder="z.B. max@mustermann.de" name="email"/><br>
+            <form onsubmit="return validate(this)" action="submit.php" method="POST">
+            <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" placeholder="z.B. max@mustermann.de" name="email" required/><br>
             <Input type="radio" name="partner" value="needed">Ich suche einen Teampartner</input><br>
             <Input type="radio" name="partner" value="notNeeded">Ich habe schon einen Teampartner</input><br>
             <input type="hidden" name="type" value="team" />
@@ -99,10 +33,11 @@ h2{
             </form>
         </div>
         <div id="come" class="box twobox col-md-6 col-lg-6"><h2>Reservieren</h2>
-            Preis bei Reservierung: 6€ sonst 5€<br>
+            Preis bei Reservierung: 5€, Abendkasse 6€<br>
             Bezahlung bei Einlass
-            <form action="submit.php" method="POST">
-                <input type="text" placeholder="z.B. max@mustermann.de" name="email"/><br>
+            <form onsubmit="return validate(this)" action="submit.php" method="POST">
+                <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" placeholder="z.B. max@mustermann.de" name="email" required/><br>
+                Anzahl Plätze: <input type="number" min="1" max="6" value="1" placeholder="1" name="number" required/><br>
                 <input type="hidden" name="type" value="reservation" />
                 <input type="submit" value="Reservieren" />
             </form>

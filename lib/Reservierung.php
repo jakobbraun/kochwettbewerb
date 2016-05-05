@@ -11,12 +11,16 @@ class Reservierung
 	
     /** @Column(type="string") **/
     protected $email;
+
+    /** @Column(type="integer") **/
+    protected $number;
     
    // /** @Column(type="Date") **/
    // protected $date;
     
-    function __construct($email) {
+    function __construct($email, $number) {
         $this->email = $email;
+        $this->number = $number;
     }
 }
 
