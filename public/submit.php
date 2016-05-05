@@ -32,16 +32,16 @@ if(isset($_POST['type']) && $_POST['type'] == "team"){
     $team = new Team($_POST['email'],(isset($_POST['partner']) && $_POST['partner'] != "needed"));
     $entityManager->persist($team);
     $entityManager->flush();
-    echo "<h1>Erfolgreich Angemeldet</h1>Wir werden uns bald bei dir per Mail melden, um alles Weitere zu besprechen.";
+    echo "<h1>Erfolgreich angemeldet</h1>Wir werden uns bald bei dir per Mail melden, um alles Weitere zu besprechen.";
 }
 else if(isset($_POST['type']) && $_POST['type'] == "reservation"){
     $reservation = new Reservierung($_POST['email']);
     $entityManager->persist($reservation);
     $entityManager->flush();
-    echo "<h1>Erfolgreich Reserviert</h1>Wir freuen uns auf dich!";
+    echo "<h1>Erfolgreich reserviert</h1>Wir freuen uns auf dich!";
 }
 else{
- echo "<h1>Fehler</h1>Es ist ein Fehler Aufgetreten. Bitte versuch es erneut!";
+ echo "<h1>Fehler</h1>Es ist ein Fehler aufgetreten. Bitte versuch es erneut!";
 }
 ?>
 </div>
