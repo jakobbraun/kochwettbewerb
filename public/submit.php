@@ -9,6 +9,7 @@ if(!isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL
 <meta charset="utf-8">
 <title>Kochwettbewerb</title>
 <link href="css/root.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <style>
 #container{
   text-align: center;
