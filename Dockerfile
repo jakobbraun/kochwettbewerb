@@ -1,5 +1,6 @@
-FROM php:5.6-apache
-RUN apt-get update && apt-get -y install git && docker-php-ext-install pdo_mysql filter
+FROM php:7.0-apache
+RUN apt-get update && apt-get -y install git
+RUN docker-php-ext-install pdo_mysql
 
 #debug:
 RUN apt-get install nano
